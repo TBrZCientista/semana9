@@ -1,6 +1,10 @@
 const fs = require('fs')
 const { formatWithOptions } = require('util')
 
-fs.createReadStream('./assets/salsicha.jpg')
-    .pipe(fs.createWriteStream('./assets/salsicha-stream.jpg'))
-    .on('finish',()=> console.log('imagem foi escrita com sucesso'))
+module.exports = (caminho, nomeDoArquivo, callbackImagemCriada)=> {
+    const novoCaminho = `./assets/imagens/${nomeDoArquivo}`
+
+    fs.createReadStream(caminho)
+        .pipe(fs.createWriteStream(novoCaminho))
+        .on('finish',()=> callbackImagemCriada(novoCaminho))
+    }
