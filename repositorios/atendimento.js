@@ -7,6 +7,12 @@ class Atendimento {
         return query(sql, atendimento)
     }
 
+    lista () {
+        const sql = 'SELECT * FROM agenda_petshop.atendimentos'
+
+        return query(sql)
+    }
+
 }
 
 module.exports = new Atendimento()
