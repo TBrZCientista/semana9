@@ -30,7 +30,6 @@ class Atendimento {
             }
         ]
     }
-
     adiciona(atendimento){       
 
         const dataCriacao = moment().format('YYYY-MM-DD HH:MM:SS')
